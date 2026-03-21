@@ -11,7 +11,7 @@
   />
   <meta
     name="keywords"
-    content="Abbas Mir, Business Strategist, SaaS Founder, Public Speaker, Tech Consultant, AI, Blockchain, SaaS, Chennai"
+    content="Abbas Mir, Business Strategist, SaaS Founder, Public Speaker, Tech Consultant, AI, Blockchain, SaaS, Chennai, Lead to Cash"
   />
   <meta name="author" content="Abbas Mir" />
   <meta name="robots" content="index, follow" />
@@ -47,9 +47,8 @@
       --text: #f5f5f7;
       --muted: #a1a1aa;
       --line: rgba(255,255,255,0.08);
-      --line-strong: rgba(255,255,255,0.12);
+      --line-strong: rgba(255,255,255,0.14);
       --accent: #ffffff;
-      --accent-soft: rgba(255,255,255,0.08);
       --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
       --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.2);
       --radius-xl: 32px;
@@ -104,8 +103,7 @@
     }
 
     .card {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
       border-radius: var(--radius-xl);
@@ -118,7 +116,7 @@
     }
 
     .soft-card {
-      background: var(--surface-3);
+      background: rgba(255,255,255,0.04);
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
       padding: 18px;
@@ -140,6 +138,7 @@
       justify-content: space-between;
       gap: 18px;
       padding: 16px 22px;
+      position: relative;
     }
 
     .brand {
@@ -160,11 +159,44 @@
     .nav-links a {
       color: var(--muted);
       font-size: 0.95rem;
-      transition: color 0.2s ease, opacity 0.2s ease;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
       color: var(--text);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .mobile-menu-btn .dots {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu-btn .dots span {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: #fff;
+      display: block;
+    }
+
+    .mobile-menu {
+      display: none;
     }
 
     .hero {
@@ -240,6 +272,16 @@
     .lead {
       font-size: 1.08rem;
       max-width: 55ch;
+    }
+
+    .hero-quote {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      color: #d4d4d8;
+      font-size: 0.98rem;
     }
 
     .meta {
@@ -336,17 +378,6 @@
         linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
     }
 
-    .hero-media::after {
-      content: "";
-      position: absolute;
-      inset: auto 18px 18px auto;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 70%);
-      filter: blur(8px);
-    }
-
     .hero-image {
       width: 100%;
       height: 100%;
@@ -400,6 +431,66 @@
 
     .experience-item p {
       margin-bottom: 0;
+    }
+
+    .quote-band {
+      padding: 24px 28px;
+      text-align: center;
+    }
+
+    .quote-band h2 {
+      max-width: 18ch;
+      margin: 0 auto 14px;
+    }
+
+    .quote-band p {
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .education-item {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+    }
+
+    .education-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .funnel-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .funnel-step {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      position: relative;
+    }
+
+    .funnel-step .step-no {
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #d4d4d8;
+      margin-bottom: 10px;
+      display: inline-block;
     }
 
     .carousel-wrap {
@@ -562,7 +653,6 @@
       font-size: 0.94rem;
     }
 
-    /* reveal */
     .reveal {
       opacity: 0;
       transform: translateY(24px);
@@ -574,7 +664,6 @@
       transform: translateY(0);
     }
 
-    /* lightbox */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -634,11 +723,13 @@
         min-height: auto;
       }
 
-      .achievement-grid {
+      .achievement-grid,
+      .funnel-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .gallery {
+      .gallery,
+      .education-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -652,35 +743,66 @@
         width: min(calc(100% - 20px), var(--max));
       }
 
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        width: min(260px, 100%);
+        background: #111114;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 10px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .mobile-menu.open {
+        display: block;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 12px;
+        color: var(--muted);
+      }
+
+      .mobile-menu a:hover {
+        background: rgba(255,255,255,0.05);
+        color: var(--text);
+      }
+
       .nav-shell,
       .hero-copy,
       .hero-media,
       .section-card,
-      .footer-shell {
+      .footer-shell,
+      .quote-band {
         padding: 22px;
-      }
-
-      .nav-shell {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 12px 14px;
       }
 
       .hero-stats,
       .achievement-grid,
-      .gallery {
+      .gallery,
+      .education-grid,
+      .funnel-grid {
         grid-template-columns: 1fr;
       }
 
       h1 {
-        font-size: 2.6rem;
+        font-size: 2.7rem;
       }
 
       h2 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
       }
 
       .carousel {
@@ -726,15 +848,34 @@
     <div class="container">
       <div class="card nav-shell">
         <a href="#top" class="brand">Abbas Mir</a>
+
         <nav class="nav-links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
           <a href="#speaking">Speaking</a>
           <a href="#achievements">Achievements</a>
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <span class="dots">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#speaking">Speaking</a>
+          <a href="#achievements">Achievements</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
     </div>
   </header>
@@ -752,6 +893,10 @@
               technology-driven systems with a balance of commercial thinking, strategy, and delivery.
             </p>
 
+            <div class="hero-quote">
+              “I don’t just build software. I build credibility, clarity, and execution systems that help businesses move faster.”
+            </div>
+
             <div class="meta">
               <div class="pill">Chennai, India</div>
               <div class="pill">Lead-to-Cash</div>
@@ -761,7 +906,7 @@
 
             <div class="actions">
               <a class="btn btn-primary" href="https://wa.me/919600842962" target="_blank" rel="noopener noreferrer">WhatsApp Me</a>
-              <a class="btn btn-secondary" href="#contact">Work With Me</a>
+              <a class="btn btn-secondary" href="#funnel">Work With Me</a>
             </div>
 
             <div class="hero-stats">
@@ -787,6 +932,18 @@
           <div class="card hero-media reveal">
             <img class="hero-image" src="1.png" alt="Abbas Mir professional portrait" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card quote-band reveal">
+          <div class="eyebrow">Positioning</div>
+          <h2>From business pain points to execution-ready solutions</h2>
+          <p>
+            I combine strategy, communication, technology, and leadership into one operating profile — helping founders, institutions, and growth-focused teams move from discussion to delivery.
+          </p>
         </div>
       </div>
     </section>
@@ -855,6 +1012,35 @@
             <div class="experience-item">
               <h3>Independent Strategist & Builder</h3>
               <p>Contributing across business strategy, product execution, UI/UX, SaaS, and communication.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container">
+        <div class="card section-card reveal">
+          <div class="eyebrow">Education & Credentials</div>
+          <h2>Academic foundation behind my execution mindset</h2>
+
+          <div class="education-grid">
+            <div class="education-item">
+              <strong>B.E. — Computer Science with AI & ML</strong>
+              <p>SIMATS Engineering, Chennai</p>
+              <p class="muted">Strong academic foundation with gold medal distinction.</p>
+            </div>
+
+            <div class="education-item">
+              <strong>Machine Learning Programme</strong>
+              <p>IITM Pravartak / IIT Madras ecosystem</p>
+              <p class="muted">Advanced technical learning in machine learning and applied systems thinking.</p>
+            </div>
+
+            <div class="education-item">
+              <strong>Microsoft Azure Fundamentals (AZ-900)</strong>
+              <p>Cloud fundamentals certification</p>
+              <p class="muted">Structured grounding in cloud platforms, services, and infrastructure basics.</p>
             </div>
           </div>
         </div>
@@ -936,6 +1122,49 @@
       </div>
     </section>
 
+    <section class="section" id="funnel">
+      <div class="container">
+        <div class="card section-card reveal">
+          <div class="eyebrow">Work With Me</div>
+          <h2>A personal branding funnel designed for trust, clarity, and action</h2>
+          <p>
+            Whether you are a founder, institution, or business leader, this is how I typically create value.
+          </p>
+
+          <div class="funnel-grid">
+            <div class="funnel-step">
+              <span class="step-no">Step 01</span>
+              <strong>Discover</strong>
+              <p>I understand your business pain points, brand positioning, and execution gaps.</p>
+            </div>
+
+            <div class="funnel-step">
+              <span class="step-no">Step 02</span>
+              <strong>Strategize</strong>
+              <p>I map the right business, product, or communication framework for your objective.</p>
+            </div>
+
+            <div class="funnel-step">
+              <span class="step-no">Step 03</span>
+              <strong>Build</strong>
+              <p>I contribute across strategy, systems, UI/UX, SaaS execution, and growth thinking.</p>
+            </div>
+
+            <div class="funnel-step">
+              <span class="step-no">Step 04</span>
+              <strong>Scale</strong>
+              <p>I help turn execution into business momentum through delivery, trust, and positioning.</p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/919600842962" target="_blank" rel="noopener noreferrer">Start a Conversation</a>
+            <a class="btn btn-secondary" href="mailto:contact@abbasmir.in">Send an Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="gallery">
       <div class="container">
         <div class="card section-card reveal">
@@ -1011,6 +1240,30 @@
   </div>
 
   <script>
+    // mobile menu
+    (function () {
+      const btn = document.getElementById("mobileMenuBtn");
+      const menu = document.getElementById("mobileMenu");
+
+      if (!btn || !menu) return;
+
+      btn.addEventListener("click", function () {
+        menu.classList.toggle("open");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          menu.classList.remove("open");
+        }
+      });
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", function () {
+          menu.classList.remove("open");
+        });
+      });
+    })();
+
     // Carousel
     (function () {
       const slides = document.querySelectorAll("#speakingCarousel .carousel-slide");
